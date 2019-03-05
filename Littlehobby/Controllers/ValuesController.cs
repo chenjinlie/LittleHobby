@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using DataSimulator;
+using System.Data;
 
 namespace Littlehobby.Controllers
 {
@@ -20,9 +22,23 @@ namespace Littlehobby.Controllers
         [HttpGet("{id}")]
         public string Get(int id)
         {
-            return "value";
-        }
+            string cef= string.Empty;
+            //定义接口列表，1.请求首页文章以及背景图片地址等等
+            //2.三个页面分别请求的值为，1（Music）2(Mover)3(Code)
+            if (id == 2)
+            {
+                DataTable dt = new DataTable();
+                string sql = "SELECT ArticleDescription FROM [dbo].[Information] where Type=2;";
+                dt= DbHelperSQL.Query(sql).Tables[0];
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    cef = cef+dt.Rows[i]["ArticleDescription"].ToString();
+                }
+            }
 
+            return cef;
+
+        }
         // POST api/values
         [HttpPost]
         public void Post([FromBody]string value)
@@ -37,8 +53,9 @@ namespace Littlehobby.Controllers
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public string Delete(int id)
         {
+            return "text";
         }
     }
 }

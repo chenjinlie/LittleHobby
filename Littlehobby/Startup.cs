@@ -35,6 +35,24 @@ namespace Littlehobby
             }
 
             app.UseMvc();
+            //绑定WebSocket
+            //app.Map("/wsone/Connect", (con) =>
+            // {
+            //     con.UseWebSockets();
+            //     Communication _Comm = new Communication();
+            //     con.Use(_Comm.Connect);
+            // }
+            //);
+            //KeepAliveInterval表示向客户端发送Ping帧的时间间隔；
+            //ReceiveBufferSize表示接收数据的缓冲区大小：
+            var webSocketOptions = new WebSocketOptions()
+            {
+                KeepAliveInterval = TimeSpan.FromSeconds(120),
+                ReceiveBufferSize = 4 * 1024
+            };
+
+            app.UseWebSockets();
+            //app.UseMiddleware<ChatWebSocketMiddleware>();
         }
     }
 }

@@ -28,7 +28,7 @@ html,
 body {
     height: 100%;
     background-color: #333;
-    background-image: url('../img/index/bg/爱乐之城2.jpeg');
+    /*background-image: url('../img/index/bg/爱乐之城2min.jpg');*/
     background-repeat: no-repeat;
     background-size: 100% auto;
     /*moz-background-size: 100%*/
