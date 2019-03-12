@@ -227,9 +227,9 @@ a {
 }
 
 .frame__title {
-    font-size: 1rem;
+    font-size: 2rem;
     margin: 0 0 1rem;
-    font-weight: 400
+    font-weight: 700
 }
 
 .frame__links {
@@ -237,8 +237,13 @@ a {
 }
 
 .frame a {
-    text-transform: lowercase
+    /*text-transform: lowercase*/
+    color:#808080;
 }
+
+    .frame a:hover {
+        color:silver;
+    }
 
 .frame__demos a:not(:last-child), .frame__github, .frame__links a:not(:last-child) {
     margin-right: 1rem

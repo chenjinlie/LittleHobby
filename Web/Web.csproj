@@ -79,9 +79,11 @@
     <Content Include="Css\BootStrap\bootstrap-reboot.min.css" />
     <Content Include="Css\BootStrap\bootstrap.css" />
     <Content Include="Css\BootStrap\bootstrap.min.css" />
+    <Content Include="Css\BootStrap\blog.css" />
     <Content Include="Css\demo2.css" />
     <Content Include="Css\Index.css" />
     <Content Include="Css\vendors.css" />
+    <Content Include="Html\Tool.html" />
     <Content Include="img\index\bg\爱乐之城1.jpg" />
     <Content Include="img\index\bg\爱乐之城2.jpeg" />
     <Content Include="img\index\bg\爱乐之城2min.jpg" />
@@ -179,9 +181,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Html\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <TypeScriptCompile Include="Js\Bootstrap\index.d.ts" />
   </ItemGroup>
